@@ -2,6 +2,26 @@
 * {
     font-family: 'Raleway', sans-serif;
 }
+/* RESET GLOBAL */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Desktop styles ici */
+
+/* TABLETTE */
+@media (max-width: 1024px) {
+  /* Ajustements responsive */
+}
+
+/* MOBILE */
+@media (max-width: 767.98px) {
+  /* Ajustements responsive */
+}
 
 
 /****** General ***********/
@@ -27,7 +47,17 @@
 html {
   scroll-behavior: smooth;
 }
+.trouver-hebergement {
+    padding-top: 30px;
+}
 
+.trouver-hebergement h1 {
+    margin-bottom: 8px;
+}
+
+.trouver-hebergement p {
+    margin-top: 0;
+}
 .sizeLiens ul {
     display: flex;
     gap: 68px;
@@ -145,10 +175,16 @@ html {
      font-size: 22px;
     margin-bottom: 4px;
 }
+.filtres { 
+    display: flex;
+   gap: 15px;
+  flex-wrap: wrap;
+
+}
 
 /* Conteneur des filtres */
 .filtres-container {
-  display: flex;
+  display:flex;
   gap: 15px;
   flex-wrap: wrap;
   margin-top: 10px;
@@ -213,7 +249,7 @@ body {
     width: 100%;
     max-width: 1440px;
     padding: 0 50px;
-    box-sizing: border-box;
+
 }
 
 a {
@@ -222,7 +258,7 @@ a {
 }
 
 .section-title {
-    margin: 0;
+    margin:0;
     font-size: 22px;
 }
 
@@ -404,6 +440,7 @@ font-size: 14px;
 .populaires-cards .card {
     display: flex;
     margin-top: 33px;
+    width: 100%;
 }
 
 .populaires-cards img {
@@ -429,7 +466,8 @@ font-size: 14px;
 }
 .fa-solid.fa-chart-line {
     color: #0065FC !important;
-}
+    }
+   
 /***activites***/
 
 .activites {
@@ -440,9 +478,9 @@ font-size: 14px;
     
   
 .activites-title {
-    display: flex;
+   
     justify-content: space-between;
-    flex-direction: column;
+   
     padding: 20px 19px ;
 
 }
@@ -484,7 +522,7 @@ font-size: 14px;
 .activites-boxes {
     display: flex;         /* active Flexbox */
     gap: 30px ;             /* espace entre les cartes */
-    flex-wrap: wrap;       /* passe à la ligne si trop large */
+   
    flex-direction: row;
    justify-content: space-between;
    }
@@ -528,53 +566,79 @@ font-size: 14px;
    /* === Icônes Font Awesome === */
    .fas, .far, .fal, .fab {
     color: #0065FC !important;
- }  
+ } 
+  * {
+  outline: 1px solid red;
+}
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
     .tablette {
         display: flex;
-        width: 1024px;
+        width: 100%;       
+        max-width: 1024px; 
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
     }
+    .box-filtre {
+        margin-top: 30px;
+        margin-bottom: -20px;
+    }
+    .filtres-container {
+        display: block;
+
+    }
     .hebergements-and-populaires {
         flex-direction: column;
-
+      
     }
 
     .hebergements {
         width: 100%;
     }
+.populaires {
+  width:100%;
+}
 
-    .populaires {
-        width: 100%;
-        margin-top: 50px;
-    }
+  /* Conteneur de la section Populaires */
+  .populaires {
+    width: 100%;
+  }
 
-    .populaires-cards {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 20px;
-    }
+  /* Conteneur des cartes */
+  .populaires-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;      /* espace entre les cartes */
+    width: 100%;
+  }
 
-    .populaires-cards a {
-        width: 30%;
-       
-    }
+  /* Chaque carte */
+  .populaires-cards a {
+    display: flex;            /* assure que le flex fonctionne correctement */
+    flex: 1;                  /* chaque carte prend la même largeur */
+    max-width: calc(100% / 3); /* pas plus d’un tiers du conteneur */
+  }
 
-    .populaires-cards .card-title {
-        font-size: 14px;
-    }
+  /* Titres et sous-titres */
+  .populaires-cards .card-title,
+  .populaires-cards .card-subtitle {
+    font-size: 14px;
+ }
 
-    .populaires-cards .card-subtitle {
-        font-size: 13px;
-    }
+.populaires-cards a {
+  outline: 3px solid red;
+}
+
    /* activités */
 .activites-boxes {
     display: flex;
@@ -587,15 +651,30 @@ font-size: 14px;
     flex: 1 1 calc(25% - 30px); /* 4 cartes sur une ligne */
     margin-bottom: 20px;
 }
+
+   
+/**footer**/
+.footer {
+    margin: 0;
+
+}
+
 }
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-   
+
+       body {
+        margin: 0;
+        padding: 0;
+    }
 
     /* conteneur principale */
     .main-container {
-        padding: 20px;
+       
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
         }
         /*header*/
         header .flexBetween{
@@ -646,21 +725,17 @@ font-size: 14px;
        font-size: 18px;
   }
 
-  /*  FILTRES */
-  .filtres-container {
+/**filtre**/
+.filtre {
     display: flex;
-    grid-template-columns: repeat(2,1fr);
-    gap: 35px;
-  }
 
-  .filtre {
-   justify-content: center;
-  }
-/*hebergements-and-populaires*/
+}
+
 .hebergements-and-populaires {
     display: flex;
     flex-direction: column-reverse;
     }
+
 
   .hebergements,
   .populaires {
@@ -671,7 +746,11 @@ font-size: 14px;
     flex-direction: column;
     gap: 35px;
   }
-  
+  .hebergements {
+    background: none !important;
+    background-image: none !important;
+    background-color: transparent !important;
+  }
   .card {
     width: 100%;
   }
@@ -680,11 +759,12 @@ font-size: 14px;
     .populaires-cards {
        
         flex-direction: column;
-      
+        gap: 15px;
     }
 
     .populaires-cards a {
         width: 100%;
+        max-width: 100%;
     }
 
    
@@ -695,16 +775,19 @@ font-size: 14px;
   }
 
    .activites-boxes .box {
-    margin-bottom: 10px;
+       flex: 1 1 100%;
    }  
 
   .activites .box img {
     height: 150px;
   }
-
-  /* FOOTER  */
-  .footer {
-    flex-direction: column;
-    gap: 30px;
-  }
+/* FOOTER */
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+  background-color: #F2F2F2; /* ou ta couleur */
+}
+ 
 }
