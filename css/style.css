@@ -152,7 +152,7 @@ html {
 }
 .filtres { 
     display: flex;
-    justify-content: center;
+  
     align-items: center;
     gap: 15px;
     flex-wrap: wrap;
@@ -615,11 +615,18 @@ header .flexBetween{
 /**filtre**/
 .filtre {
     display: flex;
+    gap: 10px;
+   
+    display: flex;
+    flex-wrap: wrap;
+   
+    box-sizing: border-box;
 }
 .hebergements-and-populaires {
     display: flex;
     flex-direction: column-reverse;
     }
+    
 .hebergements,
 .populaires {
     width: 100%;
